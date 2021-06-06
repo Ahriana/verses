@@ -14,7 +14,8 @@
     "run": "yarn run dist && yarn run start",
     "lint": "eslint ./src/**/*",
     "lint:fix": "eslint src --fix",
-    "publish:dist": "npm run build && cd dist && npm publish"
+    "publish:dist": "npm run build && cd dist && npm publish",
+    "prepublish": "npm run build"
   },
   "author": "Ahriana <ahrianadev@gmail.com>",
   "license": "ISC",
