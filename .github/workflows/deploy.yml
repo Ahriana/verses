@@ -25,7 +25,7 @@ jobs:
     - run: npm run build
     - run: npm run publish:dist --tag ${{ github.event.release.target_commitish }}
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - run: git push
       env:
         github-token: ${{ secrets.GITHUB_TOKEN }}
