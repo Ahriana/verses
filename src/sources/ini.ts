@@ -38,7 +38,7 @@ export default function parseIni (ini: Buffer) {
     let [_raw, param, value] = lineArray[i].match(/([^=]+)=(.+)/) || [];
     if (!value || !value.trim()) { continue; }
 
-    param = param.trim().toLocaleLowerCase();
+    param = param.trim().toLowerCase();
     value = value.trim();
 
     if (!(param in output)) { continue; }
@@ -47,7 +47,7 @@ export default function parseIni (ini: Buffer) {
 
     // bools
     const bools = ['pro_drums'];
-    if (bools.includes(param)) { outputValue = value.toLocaleLowerCase() === 'true'; }
+    if (bools.includes(param)) { outputValue = value.toLowerCase() === 'true'; }
 
     // numbers
     const nums = ['year', 'diff_band', 'diff_guitar', 'diff_rhythm', 'diff_bass', 'diff_drums', 'diff_drums_real', 'diff_keys', 'diff_guitarghl', 'diff_bassghl', 'preview_start_time', 'album_track', 'playlist_track', 'song_length'];
