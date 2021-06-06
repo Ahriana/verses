@@ -21,9 +21,9 @@ jobs:
     - run: npm ci
     - run: git config --global user.name "Automation"
     - run: git config --global user.email "Automation@ahriana.dev"
-    - run: npm version ${{ github.event.release.tag_name }}
+    - run: npm version ${{ github.event.release.tag_name }} --force -m "Automated bump"
     - run: npm run build
-    - run: npm run publish:dist --tag ${{ github.event.release.target_commitish }}
+    - run: npm run publish:dist --tag latest
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - run: git push
