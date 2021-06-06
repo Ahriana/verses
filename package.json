@@ -1,20 +1,25 @@
 {
-  "name": "chart_calculator",
+  "name": "verses",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "basic parsers for CH supported formats",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "cross-env NODE_ENV=production node build/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
     "dev": "cross-env NODE_ENV=development nodemon",
-    "run": "yarn run build && yarn run start",
+    "run": "yarn run dist && yarn run start",
     "lint": "eslint ./src/**/*",
     "lint:fix": "eslint src --fix"
   },
-  "author": "",
+  "author": "Ahriana <ahrianadev@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "iconv-lite": "^0.6.3"
   },
   "devDependencies": {
     "dtslint": "^4.1.0",

@@ -2,13 +2,13 @@
   "compilerOptions": {
     "strict": true,
     "moduleResolution": "node",
-    "declaration": false,
+    "declaration": true,
     "removeComments": false,
     "alwaysStrict": true,
     "pretty": false,
     "module": "commonjs",
     "target": "es2019",
-    "outDir": "build",
+    "outDir": "dist",
     "lib": [
       "esnext",
       "esnext.array",
@@ -16,10 +16,10 @@
       "esnext.intl",
       "esnext.symbol"
     ],
-    "sourceMap": false,
+    "sourceMap": true,
     "skipDefaultLibCheck": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": false,
     "esModuleInterop": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": false
   }
 }

@@ -1,7 +1,3 @@
-build
+dist
 node_modules
-src/config/*.json
-src/files
 .vscode
-data
-HeroBot.db

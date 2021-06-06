@@ -1,1 +1,1 @@
-console.log('awoo');
+export * as iniParser from './sources/ini';
