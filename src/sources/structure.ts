@@ -27,9 +27,9 @@ export async function parseStructure (files: string | string[]) {
     chartFound: false,
     metadataFound: false,
     videoFound: false,
-    albumImage: false,
-    backgroundImage: false,
-    stems: { guitar: false, bass: false, rhythm: false, vocals: false, vocals_1: false, vocals_2: false, drums: false, drums_1: false, drums_2: false, drums_3: false, drums_4: false, keys: false, song: false, crowd: false },
+    albumImageFound: false,
+    backgroundImageFound: false,
+    stemsFound: { guitar: false, bass: false, rhythm: false, vocals: false, vocals_1: false, vocals_2: false, drums: false, drums_1: false, drums_2: false, drums_3: false, drums_4: false, keys: false, song: false, crowd: false },
     warnings: [] as { message: string, code: WarningCode }[],
     strayFiles: [] as string[]
   };
@@ -57,26 +57,26 @@ export async function parseStructure (files: string | string[]) {
 
     // images
     if (imageFormats.includes(fileExtension)) {
-      if (fileName === 'album') { return output.albumImage = true; }
-      if (fileName === 'background') { return output.albumImage = true; }
+      if (fileName === 'album') { return output.albumImageFound = true; }
+      if (fileName === 'background') { return output.albumImageFound = true; }
     }
 
     // audio
     if (audioFormats.includes(fileExtension)) {
-      if (fileName === 'guitar') { return output.stems.guitar = true; }
-      if (fileName === 'bass') { return output.stems.bass = true; }
-      if (fileName === 'rhythm') { return output.stems.rhythm = true; }
-      if (fileName === 'vocals') { return output.stems.vocals = true; }
-      if (fileName === 'vocals_1') { return output.stems.vocals_1 = true; }
-      if (fileName === 'vocals_2') { return output.stems.vocals_2 = true; }
-      if (fileName === 'drums') { return output.stems.drums = true; }
-      if (fileName === 'drums_1') { return output.stems.drums_1 = true; }
-      if (fileName === 'drums_2') { return output.stems.drums_2 = true; }
-      if (fileName === 'drums_3') { return output.stems.drums_3 = true; }
-      if (fileName === 'drums_4') { return output.stems.drums_4 = true; }
-      if (fileName === 'keys') { return output.stems.keys = true; }
-      if (fileName === 'song') { return output.stems.song = true; }
-      if (fileName === 'crowd') { return output.stems.crowd = true; }
+      if (fileName === 'guitar') { return output.stemsFound.guitar = true; }
+      if (fileName === 'bass') { return output.stemsFound.bass = true; }
+      if (fileName === 'rhythm') { return output.stemsFound.rhythm = true; }
+      if (fileName === 'vocals') { return output.stemsFound.vocals = true; }
+      if (fileName === 'vocals_1') { return output.stemsFound.vocals_1 = true; }
+      if (fileName === 'vocals_2') { return output.stemsFound.vocals_2 = true; }
+      if (fileName === 'drums') { return output.stemsFound.drums = true; }
+      if (fileName === 'drums_1') { return output.stemsFound.drums_1 = true; }
+      if (fileName === 'drums_2') { return output.stemsFound.drums_2 = true; }
+      if (fileName === 'drums_3') { return output.stemsFound.drums_3 = true; }
+      if (fileName === 'drums_4') { return output.stemsFound.drums_4 = true; }
+      if (fileName === 'keys') { return output.stemsFound.keys = true; }
+      if (fileName === 'song') { return output.stemsFound.song = true; }
+      if (fileName === 'crowd') { return output.stemsFound.crowd = true; }
     }
 
     output.strayFiles.push(file);
