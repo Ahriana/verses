@@ -1,1 +1,1 @@
-export * as iniParser from './sources/ini';
+export { iniParser } from './sources/ini';

@@ -1,6 +1,6 @@
 import Iconv from 'iconv-lite';
 
-export default function parseIni (ini: Buffer) {
+export function iniParser (ini: Buffer) {
   let source = Iconv.decode(ini, 'utf8');
   if (source.indexOf('�') > -1) { source = Iconv.decode(ini, 'latin-1'); }
   if (source.indexOf('\u0000') > -1) { source = Iconv.decode(ini, 'utf16'); }
